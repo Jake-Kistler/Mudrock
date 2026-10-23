@@ -1,2 +1,4 @@
 reservoir
 .env
+/build/
+/output/

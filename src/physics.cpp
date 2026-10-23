@@ -1,4 +1,4 @@
-#pragma once
+#include "physics.h"
 
 /**
  * @brief Calculates the pressure of a reservoir cell at the next timestep.
@@ -36,4 +36,20 @@ double next_pressure(double left_pressure,double center_pressure,double right_pr
     // Finite-difference pressure update for one interior reservoir cell.
     // r controls how strongly neighboring pressure differences affect this timestep.
     return center_pressure + r * (right_pressure - 2 * center_pressure + left_pressure);
+}
+
+/** 
+* @brief This function advances the entire row of cells by one timestamp
+* @param current_pressures is a vector containing every cell's current pressure
+* @param r is a coefficant that controls how strong the strength of the pressure update is
+* 
+* @return the vector of updates pressure cells after the step of the sim  
+*/
+
+/*
+* Conceptually, 
+*/
+
+std::vector<double> next_pressure_state(const std::vector<double>& current_pressures, double r){
+
 }
